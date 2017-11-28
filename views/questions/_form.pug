@@ -1,0 +1,59 @@
+.form-group
+ label(for="title") EVENT TITLE
+ input.form-control(type="text", name="title", placeholder="Give it a short distinct name", value=question.title)
+.form-group
+  label(for="title") LOCATION
+  input.form-control(type="text", name="location", placeholder="Search for a venue or address")
+.form-group
+  label(for="question") EVENT DESCRIPTION
+  textarea.form-control(name="content", placeholder="All of the required information: group name, event details, ...", rows="5")= question.content
+.form-group
+  label(for="title") EVENT TYPE
+  select.form-control(name="type")
+   option(value="1") Select the type of event
+   option(value="2") Appearance or Singing
+   option(value="3") Attraction
+   option(value="4") Camp, Trip or Retreat
+   option(value="5") Class, Training or Workshop
+   option(value="6") Concert or Performance
+   option(value="7") Conference
+   option(value="8") Convention
+   option(value="9") Dinner or Gala
+   option(value="10") Festival or Fair
+   option(value="11") Game or Competition
+   option(value="12") Meeting or Networking Event
+   option(value="13") Othor
+   option(value="14") Party or Social Gathering
+   option(value="15") Race or Endurance Event
+   option(value="16") Rally
+   option(value="17") Screening
+   option(value="18") Seminor or Talk
+   option(value="19") Tour
+   option(value="20") Tourment
+   option(value="21") Tradeshow, Consumer Show or Expo
+
+.form-group
+  label(for="title") EVENT TOPIC
+  select.form-control(name="topic")
+   option(value="1") Select a topic
+   option(value="2") Auto, Boat & Air
+   option(value="3") Business & professional 
+   option(value="4") Charity & Causes
+   option(value="5") Community & Culture
+   option(value="6") Family & Education
+   option(value="7") Fashion & Beauty
+   option(value="8") Film, Media & Entertainment
+   option(value="9") Food & Drink
+   option(value="10") Government & Politics
+   option(value="11") Health & Wellness
+   option(value="12") Hobbies & Special Interest
+   option(value="13") Home & Lifestyle
+   option(value="14") Music
+   option(value="15") Other
+   option(value="16") Performing & Visual Arts
+   option(value="17") Religion & Spirituality
+   option(value="18") School Activities
+   option(value="19") Science & Technology
+   option(value="20") Seasonal & Holiday
+   option(value="21") Sports & Fitness
+   option(value="22") Travel & Outdoor
