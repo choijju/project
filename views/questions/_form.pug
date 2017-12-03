@@ -2,14 +2,14 @@
  label(for="title") EVENT TITLE
  input.form-control(type="text", name="title", placeholder="Give it a short distinct name", value=question.title)
 .form-group
-  label(for="title") LOCATION
-  input.form-control(type="text", name="location", placeholder="Search for a venue or address")
+  label(for="location") LOCATION
+  input.form-control(type="text", name="location", placeholder="Search for a venue or address", value=question.location)
 .form-group
   label(for="question") EVENT DESCRIPTION
   textarea.form-control(name="content", placeholder="All of the required information: group name, event details, ...", rows="5")= question.content
 .form-group
-  label(for="title") EVENT TYPE
-  select.form-control(name="type")
+  label(for="type") EVENT TYPE
+  select.form-control(name="type", value=question.type)
    option(value="1") Select the type of event
    option(value="2") Appearance or Singing
    option(value="3") Attraction
@@ -31,10 +31,9 @@
    option(value="19") Tour
    option(value="20") Tourment
    option(value="21") Tradeshow, Consumer Show or Expo
-
 .form-group
-  label(for="title") EVENT TOPIC
-  select.form-control(name="topic")
+  label(for="topic") EVENT TOPIC
+  select.form-control(name="topic", value=question.topic)
    option(value="1") Select a topic
    option(value="2") Auto, Boat & Air
    option(value="3") Business & professional 
@@ -57,3 +56,6 @@
    option(value="20") Seasonal & Holiday
    option(value="21") Sports & Fitness
    option(value="22") Travel & Outdoor
+.form-group
+  label(for="tags") Tags
+  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")

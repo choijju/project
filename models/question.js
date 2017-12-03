@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 var schema = new Schema({
   author: { type: Schema.Types.ObjectId, ref: 'User' },
   title: {type: String, trim: true, required: true},
+  content: {type: String, trim: true, required: true},
   location: {type: String, trim: true, required: true},
   type: {type: String, trim: true, required: true},
   topic: {type: String, trim: true, required: true},
