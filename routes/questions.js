@@ -25,7 +25,12 @@ router.get('/', catchErrors(async (req, res, next) => {
   if (term) {
     query = {$or: [
       {title: {'$regex': term, '$options': 'i'}},
-      {content: {'$regex': term, '$options': 'i'}}
+      {content: {'$regex': term, '$options': 'i'}},
+      {location: {'$regex': term, '$options': 'i'}},
+      {topic: {'$regex': term, '$options': 'i'}},
+      {type: {'$regex': term, '$options': 'i'}},
+      {date: {'$regex': term, '$options': 'i'}},
+      {time: {'$regex': term, '$options': 'i'}}
     ]};
   }
   const questions = await Question.paginate(query, {
@@ -67,6 +72,9 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   question.type = req.body.type;
   question.location = req.body.location;
   question.topic = req.body.topic;
+  question.date = req.body.date;
+  question.time = req.body.time;
+  
   await question.save();
   req.flash('success', 'Successfully updated');
   res.redirect('/questions');
@@ -87,6 +95,8 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     location: req.body.location,
     type: req.body.type,
     topic: req.body.topic,
+    date: req.body.date,
+    time: req.body.time,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();

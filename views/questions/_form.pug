@@ -1,61 +1,72 @@
 .form-group
- label(for="title") EVENT TITLE
- input.form-control(type="text", name="title", placeholder="Give it a short distinct name", value=question.title)
+  label(for="title") EVENT TITLE
+  input.form-control(type="text", name="title", placeholder="Give it a short distinct name", value=question.title)
 .form-group
   label(for="location") LOCATION
   input.form-control(type="text", name="location", placeholder="Search for a venue or address", value=question.location)
+.form-group
+  label(for="date") DATE & TIME
+  .row
+   .col-md-3
+    input.form-control(type="date", name="date", value=question.date)
+   .col-md-3
+    input.form-control(type="time", name="time", value=question.time)
+   .col-md-3
+    input.form-control(type="date", name="date", value=question.date)
+   .col-md-3
+    input.form-control(type="time", name="time", value=question.time)
 .form-group
   label(for="question") EVENT DESCRIPTION
   textarea.form-control(name="content", placeholder="All of the required information: group name, event details, ...", rows="5")= question.content
 .form-group
   label(for="type") EVENT TYPE
-  select.form-control(name="type", value=question.type)
-   option(value="1") Select the type of event
-   option(value="2") Appearance or Singing
-   option(value="3") Attraction
-   option(value="4") Camp, Trip or Retreat
-   option(value="5") Class, Training or Workshop
-   option(value="6") Concert or Performance
-   option(value="7") Conference
-   option(value="8") Convention
-   option(value="9") Dinner or Gala
-   option(value="10") Festival or Fair
-   option(value="11") Game or Competition
-   option(value="12") Meeting or Networking Event
-   option(value="13") Othor
-   option(value="14") Party or Social Gathering
-   option(value="15") Race or Endurance Event
-   option(value="16") Rally
-   option(value="17") Screening
-   option(value="18") Seminor or Talk
-   option(value="19") Tour
-   option(value="20") Tourment
-   option(value="21") Tradeshow, Consumer Show or Expo
+  select.form-control(type="text", name="type", value=question.type)
+   option(value="Select the type of event") Select the type of event
+   option(value="Appearance or Singing") Appearance or Singing
+   option(value="Attraction") Attraction
+   option(value="Camp, Trip or Retreat") Camp, Trip or Retreat
+   option(value="Class, Training or Workshop") Class, Training or Workshop
+   option(value="Concert or Performance") Concert or Performance
+   option(value="Conference") Conference
+   option(value="Convention") Convention
+   option(value="Dinner or Gala") Dinner or Gala
+   option(value="Festival or Fair") Festival or Fair
+   option(value="Game or Competition") Game or Competition
+   option(value="Meeting or Networking Event") Meeting or Networking Event
+   option(value="Othor") Othor
+   option(value="Party or Social Gathering") Party or Social Gathering
+   option(value="Race or Endurance Event") Race or Endurance Event
+   option(value="Rally") Rally
+   option(value="Screening") Screening
+   option(value="Seminor or Talk") Seminor or Talk
+   option(value="Tour") Tour
+   option(value="Tourment") Tourment
+   option(value="Tradeshow, Consumer Show or Expo") Tradeshow, Consumer Show or Expo
 .form-group
   label(for="topic") EVENT TOPIC
-  select.form-control(name="topic", value=question.topic)
-   option(value="1") Select a topic
-   option(value="2") Auto, Boat & Air
-   option(value="3") Business & professional 
-   option(value="4") Charity & Causes
-   option(value="5") Community & Culture
-   option(value="6") Family & Education
-   option(value="7") Fashion & Beauty
-   option(value="8") Film, Media & Entertainment
-   option(value="9") Food & Drink
-   option(value="10") Government & Politics
-   option(value="11") Health & Wellness
-   option(value="12") Hobbies & Special Interest
-   option(value="13") Home & Lifestyle
-   option(value="14") Music
-   option(value="15") Other
-   option(value="16") Performing & Visual Arts
-   option(value="17") Religion & Spirituality
-   option(value="18") School Activities
-   option(value="19") Science & Technology
-   option(value="20") Seasonal & Holiday
-   option(value="21") Sports & Fitness
-   option(value="22") Travel & Outdoor
+  select.form-control(type="text", name="topic", value=question.topic)
+   option(value="Select a topic") Select a topic
+   option(value="Auto, Boat & Air") Auto, Boat & Air
+   option(value="Business & professional") Business & professional 
+   option(value="Charity & Causes") Charity & Causes
+   option(value="Community & Culture") Community & Culture
+   option(value="Family & Education") Family & Education
+   option(value="Fashion & Beauty") Fashion & Beauty
+   option(value="Film, Media & Entertainment") Film, Media & Entertainment
+   option(value="Food & Drink") Food & Drink
+   option(value="Government & Politics") Government & Politics
+   option(value="Health & Wellness") Health & Wellness
+   option(value="Hobbies & Special Interest") Hobbies & Special Interest
+   option(value="Home & Lifestyle") Home & Lifestyle
+   option(value="Music") Music
+   option(value="Other") Other
+   option(value="Performing & Visual Arts") Performing & Visual Arts
+   option(value="Religion & Spirituality") Religion & Spirituality
+   option(value="School Activities") School Activities
+   option(value="Science & Technology") Science & Technology
+   option(value="Seasonal & Holiday") Seasonal & Holiday
+   option(value="Sports & Fitness") Sports & Fitness
+   option(value="Travel & Outdoor") Travel & Outdoor
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")

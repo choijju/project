@@ -9,6 +9,8 @@ var schema = new Schema({
   location: {type: String, trim: true, required: true},
   type: {type: String, trim: true, required: true},
   topic: {type: String, trim: true, required: true},
+  date: {type: String, trim: true, required: true},
+  time: {type: String, trim: true, required: true},
   tags: [String],
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},
