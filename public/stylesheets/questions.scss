@@ -14,26 +14,14 @@
   .content {
     color: black;
   }
+  .content2{
+    font-size: 1.0rem;
+    color: gray;
+  }
   .tags {
     margin: 0.5em 0;
   }
-  .location{
-    font-size: 0.8rem;
-    color: gray;
-  }
-  .topic{
-    font-size: 0.8rem;
-    color: gray;
-  }
-  .type{
-    font-size: 0.8rem;
-    color: gray;
-  }
-  .time{
-    font-size: 0.8rem;
-    color: gray;
-  }
-  .date{
+  .location, .topic, .type, .time, .date{
     font-size: 0.8rem;
     color: gray;
   }

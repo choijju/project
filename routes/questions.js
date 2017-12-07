@@ -26,11 +26,13 @@ router.get('/', catchErrors(async (req, res, next) => {
     query = {$or: [
       {title: {'$regex': term, '$options': 'i'}},
       {content: {'$regex': term, '$options': 'i'}},
+      {content2: {'$regex': term, '$options': 'i'}},
       {location: {'$regex': term, '$options': 'i'}},
       {topic: {'$regex': term, '$options': 'i'}},
       {type: {'$regex': term, '$options': 'i'}},
       {date: {'$regex': term, '$options': 'i'}},
-      {time: {'$regex': term, '$options': 'i'}}
+      {time: {'$regex': term, '$options': 'i'}},
+      {pay: {'$regex': term, '$options': 'i'}}
     ]};
   }
   const questions = await Question.paginate(query, {
@@ -68,12 +70,14 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   }
   question.title = req.body.title;
   question.content = req.body.content;
+  question.content2 = req.body.content2;
   question.tags = req.body.tags.split(" ").map(e => e.trim());
   question.type = req.body.type;
   question.location = req.body.location;
   question.topic = req.body.topic;
   question.date = req.body.date;
   question.time = req.body.time;
+  question.pay = req.body.pay;
   
   await question.save();
   req.flash('success', 'Successfully updated');
@@ -92,12 +96,14 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     title: req.body.title,
     author: user._id,
     content: req.body.content,
+    content2: req.body.content2,
     location: req.body.location,
     type: req.body.type,
     topic: req.body.topic,
     date: req.body.date,
     time: req.body.time,
     tags: req.body.tags.split(" ").map(e => e.trim()),
+    pay: req.body.pay
   });
   await question.save();
   req.flash('success', 'Successfully posted');

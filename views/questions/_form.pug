@@ -16,12 +16,15 @@
    .col-md-3
     input.form-control(type="time", name="time", value=question.time)
 .form-group
+  label(for="question") ORANIZER DESCRIPTION
+  textarea.form-control(name="content2", placeholder="All of the required organizer information", row="1")= question.content2
+.form-group
   label(for="question") EVENT DESCRIPTION
-  textarea.form-control(name="content", placeholder="All of the required information: group name, event details, ...", rows="5")= question.content
+  textarea.form-control(name="content", placeholder="All of the required event information", rows="5")= question.content
 .form-group
   label(for="type") EVENT TYPE
   select.form-control(type="text", name="type", value=question.type)
-   option(value="Select the type of event") Select the type of event
+   option(value="Type is not set") Select the type of event
    option(value="Appearance or Singing") Appearance or Singing
    option(value="Attraction") Attraction
    option(value="Camp, Trip or Retreat") Camp, Trip or Retreat
@@ -45,7 +48,7 @@
 .form-group
   label(for="topic") EVENT TOPIC
   select.form-control(type="text", name="topic", value=question.topic)
-   option(value="Select a topic") Select a topic
+   option(value="Topic is not set") Select a topic
    option(value="Auto, Boat & Air") Auto, Boat & Air
    option(value="Business & professional") Business & professional 
    option(value="Charity & Causes") Charity & Causes
@@ -67,6 +70,19 @@
    option(value="Seasonal & Holiday") Seasonal & Holiday
    option(value="Sports & Fitness") Sports & Fitness
    option(value="Travel & Outdoor") Travel & Outdoor
+.form-group
+  label(for="pay") TICKETS(If you want to create a pay ticket, you must set the price)
+  .row
+   .col-md-4
+    .input-group
+     .input-group-addon
+      input.form-control(name="check", type="checkbox", aria-label="...", value="FREE")
+      input.form-control(type="text", placeholder="Free Ticket")
+   .col-md-4
+    .input-group
+     .input-group-addon
+      input.form-control(type="checkbox", name="check", aria-label="...")
+      input.form-control(type="text", name="pay", placeholder="Pay Ticket", value=question.pay)
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
