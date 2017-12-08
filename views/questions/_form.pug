@@ -74,7 +74,7 @@
   label(for="pay") TICKETS(If you want to create a pay ticket, you must set the price)
     .input-group
      .input-group-addon $
-      input.form-control(type="text", name="pay", value=question.pay="Free")
+      input.form-control(type="text", name="pay", placeholder="Ex)15,000", value=question.pay="Free")
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")

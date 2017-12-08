@@ -3,10 +3,14 @@ extends layout
 block hero-unit
   .jumbotron
     .container
-      
+      H3 MyoungJi Univ. wep-programming project
+      H8 60161638, 최주혜
+
 block content
   .container
-    .row
-      .col-md-6
-        p 2017, MyoungJi univ, Wep programming project
-        p 60161638 최주혜
+    H4 Search for events
+    form.form-inline.search-input-group(action='/questions', method='GET')
+      i.fa.fa-search.fa-spin.fa-spinner
+      ul.suggest-box
+      input.form-control.mr-sm-2(type='text', name='term', id='q', placeholder='Search for events by keyword, location, type, ....', aria-label='Search', value=term)
+    script(src="/javascripts/autocomplete.js")

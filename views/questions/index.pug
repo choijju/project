@@ -5,8 +5,10 @@ include ../includes/_paginate
 block content
   .container
     form.form-inline.search-input-group(action='/questions', method='GET')
-      i.fa.fa-search
-      input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
+      i.fa.fa-search.fa-spin.fa-spinner
+      ul.suggest-box
+      input.form-control.mr-sm-2(type='text', name='term', id='q', placeholder='Search for events by keyword, location, type, ....', aria-label='Search', value=term)
+    script(src="/javascripts/autocomplete.js")
 
     h1.main-title 
       | EVENTS
