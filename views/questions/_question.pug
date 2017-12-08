@@ -1,11 +1,11 @@
 .location= question.location
 .type= question.type
 .topic= question.topic
+.pay= question.pay
 .content2= question.content2
 .content= question.content
 .date= question.date
 .time= question.time
-.pay= question.pay
 .tags.badges
   each tag in question.tags
     span.badge.badge-phill.badge-secondary= tag
@@ -13,8 +13,7 @@
 .row
   .col-sm
     .numbers.
-      #[span.number.num-votes= question.numLikes] likes,
-      #[span.number.num-answers= question.numAnswers] answers,
+      #[span.number.num-answers= question.numAnswers] registers,
       #[span.number.num-views= question.numReads] reads
   .col-sm
     .author

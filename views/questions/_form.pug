@@ -72,17 +72,9 @@
    option(value="Travel & Outdoor") Travel & Outdoor
 .form-group
   label(for="pay") TICKETS(If you want to create a pay ticket, you must set the price)
-  .row
-   .col-md-4
     .input-group
-     .input-group-addon
-      input.form-control(name="check", type="checkbox", aria-label="...", value="FREE")
-      input.form-control(type="text", placeholder="Free Ticket")
-   .col-md-4
-    .input-group
-     .input-group-addon
-      input.form-control(type="checkbox", name="check", aria-label="...")
-      input.form-control(type="text", name="pay", placeholder="Pay Ticket", value=question.pay)
+     .input-group-addon $
+      input.form-control(type="text", name="pay", value=question.pay="Free")
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")

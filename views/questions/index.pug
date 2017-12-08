@@ -20,9 +20,12 @@ block content
         each question in questions.docs
           .question
             a.title(href=`/questions/${question.id}`)= question.title
-            include _question
+            |  / 
+            a.location(href=`/questions/${question.id}`)= question.location
+            |  / 
+            a.date(href=`/questions/${question.id}`)= question.date
 
       +paginate(questions, '/questions', query)
 
     hr
-    a.btn.btn-primary(href='/questions/new') Add Event
+    a.btn.btn-primary(href='/questions/new') CREATE EVENT
