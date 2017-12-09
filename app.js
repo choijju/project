@@ -37,6 +37,7 @@ mongoose.Promise = global.Promise; // ES6 Native Promise를 mongoose에서 사�
 
  const connStr = (process.env.NODE_ENV=='production')? 
     'mongodb://user1:sm072927@ds137090.mlab.com:37090/wpproject':
+    'mongodb://localhost.mjdb3'
 
   mongoose.connect(connStr, {useMongoClient: true });
   mongoose.connection.on('error', console.error);
