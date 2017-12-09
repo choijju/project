@@ -111,4 +111,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use(require('cookie-session')({
+  // Cookie config, take a look at the docs...
+}));
+
 module.exports = app;
