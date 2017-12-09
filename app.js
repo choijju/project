@@ -10,7 +10,6 @@ var methodOverride = require('method-override');
 var flash = require('connect-flash');
 var mongoose   = require('mongoose');
 var passport = require('passport');
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 var questions = require('./routes/questions');
@@ -47,6 +46,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 
 // _method를 통해서 method를 변경할 수 있도록 함. PUT이나 DELETE를 사용할 수 있도록.
@@ -63,6 +63,7 @@ app.use(sassMiddleware({
 
 // session을 사용할 수 있도록.
 app.use(session({
+  name: 'Eventbrite',
   resave: true,
   saveUninitialized: true,
   secret: 'long-long-long-secret-string-1313513tefgwdsvbjkvasd'
@@ -92,6 +93,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/questions', questions);
 require('./routes/auth')(app, passport);
+app.use('/api', require('./routes/api'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -110,9 +112,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.use(require('cookie-session')({
-  // Cookie config, take a look at the docs...
-}));
 
 module.exports = app;
