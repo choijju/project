@@ -36,11 +36,10 @@ app.locals.querystring = require('querystring');
 mongoose.Promise = global.Promise; // ES6 Native Promise를 mongoose에서 사용한다.
 
  const connStr = (process.env.NODE_ENV=='production')? 
-  'mongodb://user1:sm072927@ds113825.mlab.com:13825/sampledb1':
-  'mongodb://localhost/mjdb3';
+    'mongodb://user1:sm072927@ds137090.mlab.com:37090/wpproject':
 
   mongoose.connect(connStr, {useMongoClient: true });
-mongoose.connection.on('error', console.error);
+  mongoose.connection.on('error', console.error);
 
 // Favicon은 웹사이트의 대표 아이콘입니다. Favicon을 만들어서 /public에 둡시다.
 // https://www.favicon-generator.org/ 여기서 만들어볼 수 있어요.
